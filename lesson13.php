@@ -37,3 +37,38 @@ echo "<br />";
 print $newText2;
 echo "<br />";
 print $newText3;
+
+
+echo "<br />";
+$myText4 ="Oczywiscie, że dzik jest najlepszym przyjacielem człowieka!";
+
+$myTextDog = str_replace('dzik', 'pies', $myText4);
+echo "<br />";
+
+print $myText4;
+echo "<br />";
+print $myTextDog;
+echo "<br />";
+
+$myText5 = "Programowanie";
+$myTextRev = strrev($myText5);
+$myTextRepeat = str_repeat('*', 10);
+
+print $myText5;
+echo "<br />";
+print $myTextRev;
+echo "<br />";
+print $myTextRepeat;
+echo "<br />";
+
+
+
+$name = "indra";
+$enter = " Indra ";
+
+$enter = mb_strtolower(trim($enter));
+if ($name == $enter) {
+    print "imiona sa identyczne";
+} else {
+    print "imiona sie roznia";
+}
