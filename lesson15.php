@@ -31,3 +31,20 @@ printf("pole kola o promieniu %.1f wynosi %.1f", $r, $p);
 echo "<br />";
 printf("pole kola o promieniu %.1f wynosi %.1f", $r, $o);
 echo "<br />";
+
+$a = 12;
+$p = 6*($a**2);
+$v = $a**3;
+
+printf("Pole szescianu o boku %.1f wynosi %.1f", $a, $p);
+echo "<br />";
+printf("Pole szescianu o boku %.1f wynosi %.1f", $a, $v);
+echo "<br />";
+
+$r = 14;
+$p = M_PI*($r**2);
+$c = 2*M_PI*$r;
+printf("Pole kola o promieniu %.1f wynosi %.1f", $r, $p);
+echo "<br />";
+printf("obwod kola o promieniu %.1f wynosi %.1f", $r, $c);
+
