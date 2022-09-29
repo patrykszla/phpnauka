@@ -17,8 +17,48 @@ $year = 1997;
 
 if (checkdate($month, $day, $year)) {
     $d = date("w", mktime(0, 0, 0, $month, $day, $year));
-  
+
     print "$year.$month.$day to " . $week[$d];
 } else {
     print "data jest bledna";
 }
+
+//cw 3
+echo "<br />";
+$start = strtotime("now");
+$end = strtotime("next friday 4pm");
+
+
+$count = $end - $start;
+
+$days = floor($count / (60 * 60 * 24));
+$hours = floor(($count / (60 * 60)) % 24);
+$minutes = floor(($count / 60) % 60);
+$seconds = $count % 60;
+echo "<br />";
+printf("Weekend zaczyna się za %d dni, %d godzin, %d minut, %d sekund.", $days, $hours, $minutes, $seconds);
+
+
+$table = [];
+$i = 0;
+do {
+    $day = rand(1, 31);
+    $month = rand(1, 31);
+    $year = rand(2021, 2121);
+    $hour = rand(0, 23);
+    $min = rand(0 , 59);
+    $sec = rand(0, 59);
+
+    if(checkdate($month, $day, $year)){
+        $table[] = strtotime("$year-$month-$day $hour:$min:$sec");
+        $i++;
+    }
+
+} while ($i < 10);
+
+sort($table);
+foreach($table as $t) {
+    print date("Y.m.d H:i:s (D)", $t);
+    echo "<br />";
+}
+
