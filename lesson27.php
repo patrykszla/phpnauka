@@ -46,19 +46,34 @@ do {
     $month = rand(1, 31);
     $year = rand(2021, 2121);
     $hour = rand(0, 23);
-    $min = rand(0 , 59);
+    $min = rand(0, 59);
     $sec = rand(0, 59);
 
-    if(checkdate($month, $day, $year)){
+    if (checkdate($month, $day, $year)) {
         $table[] = strtotime("$year-$month-$day $hour:$min:$sec");
         $i++;
     }
-
 } while ($i < 10);
 
 sort($table);
-foreach($table as $t) {
+foreach ($table as $t) {
     print date("Y.m.d H:i:s (D)", $t);
     echo "<br />";
 }
 
+
+//dodatkowe program losujacy
+$b = 0;
+$table2 = [];
+
+do {
+    $number = rand(1, 49);
+    if (!(in_array($number, $table2))) {
+        $table2[] = $number;
+        $b++;
+    }
+    echo "<br />";
+    
+} while ($b< 6);
+
+print_r($table2);
