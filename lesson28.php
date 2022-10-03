@@ -55,3 +55,59 @@ $obwod = $kwadrat->obwod();
 printf("pole kwadratu o boku %.3f wynosi %.2f.", $bok, $pole);
 echo "<br />";
 printf("obwod kwadratu o boku %.3f wynosi %.2f.", $bok, $obwod);
+echo "<br />";
+class Produkt
+{
+    private $netto;
+    public $vat = 23;
+
+    public function __construct(private string $nazwa, private int|float $brutto)
+    {
+        $this->netto = $this->setNetto();
+    }
+
+    public function drukuj() 
+    {
+        printf(
+            "Produkt:%s".PHP_EOL."Cena netto: %.2f PLN.". PHP_EOL .
+            
+            "Podatek: %.2f%%".PHP_EOL."Cena brutto: %.2f PLN",
+            $this->nazwa,
+            $this->netto,
+            $this->vat,
+            $this->brutto
+        );
+    }
+
+    private function setNetto() : int|float 
+    {
+        return $this->brutto - ($this->brutto / (1 + $this->vat));
+    }
+}
+
+$owoc = new Produkt("Jablko", brutto: 4.85);
+print $owoc->drukuj();
+
+
+class Zwierzak
+{
+    public function __construct(private string $gatunek,  private string $imie, private int|float $wiek)
+    {
+        return true;
+    }
+
+    public function drukuj()
+    {
+        echo"<br/>";
+        print ($this->gatunek);
+        echo"<br/>";
+        print($this->imie);
+        echo"<br/>";
+        print($this->wiek);
+
+    }
+}
+
+$zwierze = new Zwierzak("ssak", imie: 'krzys', wiek: 2);
+
+$zwierze->drukuj();
